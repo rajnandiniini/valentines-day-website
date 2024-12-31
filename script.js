@@ -1,36 +1,36 @@
-// Cat-following functionality
-const cat = document.getElementById("cat");
-document.addEventListener("mousemove", (event) => {
-    const mouseX = event.clientX;
-    const mouseY = event.clientY;
+const cat = document.getElementById('cat');
+const button = document.getElementById('confetti-button');
 
-    // Move the cat to follow the cursor
-    cat.style.transform = `translate(${mouseX - 30}px, ${mouseY - 30}px) scale(1.2)`;
+document.addEventListener('mousemove', (e) => {
+    cat.style.left = `${e.pageX}px`;
+    cat.style.top = `${e.pageY}px`;
 });
 
-// Confetti effect triggered by button click
-const confettiButton = document.getElementById("confettiButton");
-
-confettiButton.addEventListener("click", () => {
-    // Full-screen confetti effect triggered by the button click
-    confetti({
-        particleCount: 500,          // More particles for a bigger effect
-        spread: 360,                 // Spread confetti in all directions
-        origin: { x: 0.5, y: 0.5 },  // Start at the center of the screen
-        colors: ['#ff6f61', '#f5a623', '#4d2c7a'], // Vibrant colors for confetti
-        scalar: 1.2,                 // Slightly larger confetti
-        ticks: 200,                  // How long the confetti should fall
-        zIndex: 9999                 // Ensure confetti is on top
-    });
+button.addEventListener('click', () => {
+    throwConfetti();
 });
 
-// Scroll effect to show message after scrolling 500px
-document.addEventListener("scroll", () => {
-    const scrollPosition = window.scrollY;
-    const messageContainer = document.getElementById("message-container");
+function throwConfetti() {
+    const confettiCount = 200;
+    const confettiColors = ['#ff0a54', '#ff477e', '#ff7096', '#ff85a1', '#fbb1bd', '#f9bec7'];
 
-    // Show the message after scrolling 500px
-    if (scrollPosition > 500) {
-        messageContainer.style.opacity = "1";
+    for (let i = 0; i < confettiCount; i++) {
+        createConfetti(confettiColors[Math.floor(Math.random() * confettiColors.length)]);
     }
-});
+}
+
+function createConfetti(color) {
+    const confetti = document.createElement('div');
+    confetti.style.position = 'absolute';
+    confetti.style.width = '10px';
+    confetti.style.height = '10px';
+    confetti.style.backgroundColor = color;
+    confetti.style.top = `${Math.random() * window.innerHeight}px`;
+    confetti.style.left = `${Math.random() * window.innerWidth}px`;
+    confetti.style.animation = `fall 3s linear infinite`;
+    document.body.appendChild(confetti);
+
+    setTimeout(() => {
+        confetti.remove();
+    }, 3000);
+}
