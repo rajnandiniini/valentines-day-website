@@ -1,0 +1,65 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    text-align: center;
+}
+
+/* Container for your content */
+#container {
+    margin-top: 50px;
+}
+
+/* Heading */
+h1 {
+    font-size: 2.5rem;
+    color: #ff6f61;
+    margin-bottom: 20px;
+}
+
+/* Content container (photos) */
+#content {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.photo {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.photo:hover {
+    transform: scale(1.1);
+}
+
+/* Message container */
+#message-container {
+    margin-top: 50px;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #555;
+}
+
+/* Cat-following cursor effect */
+.cat {
+    position: fixed;
+    pointer-events: none;
+    z-index: 1000;
+    transition: transform 0.1s ease;
+}
+
+#cat {
+    width: 50px; /* Size of the cat image */
+}
