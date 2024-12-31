@@ -1,104 +1,38 @@
-/* Reset default styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body Styles */
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #ffebf2;
-    color: #4d2c7a;
-    text-align: center;
-    padding: 20px;
-    overflow-x: hidden;
-}
-
-/* Heading */
-h1 {
-    font-size: 3rem;
-    color: #ff6f61;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-/* Content container (photos) */
-#content {
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
     display: flex;
     justify-content: center;
-    gap: 20px;
-    margin-bottom: 30px;
+    align-items: center;
+    background-color: #f0f0f0;
+    flex-direction: column;
+    text-align: center;
 }
 
-.photo {
-    width: 250px;
-    height: 250px;
-    border-radius: 15px;
-    border: 5px solid #ff6f61;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+header {
+    margin-bottom: 20px;
 }
 
-.photo:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Message container */
-#message-container {
-    margin-top: 30px;
-    font-size: 1.5rem;
-    font-style: italic;
-    color: #4d2c7a;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-/* Show the message after scrolling down */
-body:scroll > #message-container {
-    opacity: 1;
-}
-
-/* Confetti Button */
-#confettiButton {
-    padding: 15px 25px;
-    font-size: 1.5rem;
-    background-color: #ff6f61;
-    color: white;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    margin-top: 30px;
-}
-
-#confettiButton:hover {
-    background-color: #ff4d36;
-    transform: scale(1.1);
-}
-
-/* Cat-following cursor effect */
-.cat {
-    position: fixed;
-    pointer-events: none;
-    z-index: 1000;
-    transition: transform 0.1s ease;
+main {
+    margin-bottom: 20px;
 }
 
 #cat {
-    width: 60px; /* Size of the cat image */
+    width: 50px;
+    height: 50px;
+    background-image: url('path/to/your/cat-image.png'); /* Add your cat image here */
+    background-size: cover;
+    position: absolute;
 }
 
-/* Cute animation for the cat */
-@keyframes moveCat {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
+#confetti-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
 }
