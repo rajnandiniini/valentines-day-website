@@ -12,15 +12,15 @@ document.addEventListener("mousemove", (event) => {
 const confettiButton = document.getElementById("confettiButton");
 
 confettiButton.addEventListener("click", () => {
-    // Full-screen confetti when button is clicked
+    // Full-screen confetti effect triggered by the button click
     confetti({
-        particleCount: 300,          // More particles for a bigger effect
-        spread: 360,                 // Spread confetti all around
-        origin: { x: 0.5, y: 0.5 },  // Origin at the center of the screen
-        colors: ['#ff6f61', '#f5a623', '#4d2c7a'],
-        scalar: 2,                   // Size of the confetti particles
+        particleCount: 500,          // More particles for a bigger effect
+        spread: 360,                 // Spread confetti in all directions
+        origin: { x: 0.5, y: 0.5 },  // Start at the center of the screen
+        colors: ['#ff6f61', '#f5a623', '#4d2c7a'], // Vibrant colors for confetti
+        scalar: 1.2,                 // Slightly larger confetti
         ticks: 200,                  // How long the confetti should fall
-        zIndex: 9999                 // Ensure it goes over all other content
+        zIndex: 9999                 // Ensure confetti is on top
     });
 });
 
