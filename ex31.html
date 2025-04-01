@@ -1,0 +1,172 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <marquee style="background-color: pink; color: white;"> EHEHHEHEH I KNOW HOW TO DO ALL THIS BECAUSE I CAN CODE UNLIKE YOU EHHEHEHEH BUT JUST KNOW THAT I LOVE YOU SO MUCH MWAHHHH 
+        you are the love of my life, you are my first thought in the morning and the last thought before i fall asleep i am so grateful to have you in my life. I will love you forever, uncontionally :) 
+    </marquee>
+    <p style="color: white;"> You have hands so you can play the song :)</p>
+    <iframe style="border-radius:12px" 
+    src="https://open.spotify.com/embed/track/5EcGSkkNBMAWOePvLgKde1?utm_source=generator" 
+    width="300" height="80" frameborder="0" allowfullscreen="" 
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+    loading="lazy">
+</iframe>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FOR AKKI</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+        <style>
+            body {
+                background: linear-gradient(135deg, #ce6b6e 0%, #fad0c4 50%, #ffecd2 100%);
+                font-family: 'Arial', sans-serif;
+                overflow-x: hidden;
+            }
+            .heart-beat {
+                animation: heartBeat 1s infinite;
+            }
+            @keyframes heartBeat {
+                0%, 100% { transform: scale(1); }
+                50% { transform: scale(1.2); }
+            }
+            .mytext {
+                background: rgba(255, 255, 255, 0.8);
+                backdrop-filter: blur(10px);
+                border-radius: 15px;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            }
+            .memory-image {
+                transition: all 0.3s ease;
+                filter: grayscale(30%);
+            }
+            .memory-image:hover {
+                transform: scale(1.05);
+                filter: grayscale(0%);
+            }
+        </style>
+    </head>
+    <body class="min-h-screen flex flex-col items-center justify-center p-4">
+        
+        <div class="container mx-auto text-center">
+            <h1 class="text-5xl font-bold text-pink-600 mb-8 heart-beat">
+               Do you fw me heavy? 💕
+            </h1>
+
+            <!-- NAVIGATION FOR COMMON SENSE -->
+            <div class="flex justify-center space-x-4 mb-8">
+                <button onclick="changeTab('memories')" class="px-4 py-2 bg-pink-400 text-white rounded-lg hover:bg-pink-500 transition">
+                    TOUCH meeee~
+                </button>
+                <button onclick="changeTab('mytext')" class="px-4 py-2 bg-pink-400 text-white rounded-lg hover:bg-pink-500 transition">
+                    Touch me toooo~
+                </button>
+                <button onclick="changeTab('interactive')" class="px-4 py-2 bg-pink-400 text-white rounded-lg hover:bg-pink-500 transition">
+                    toUch mE yAaH~
+                </button>
+            </div>
+
+            <!-- PHOTOS TAB -->
+            <div id="memories" class="tab-content hidden">
+                <h2 class="text-3xl text-pink-700 mb-6"> we literally are the cutest together</h2>
+                <div class="grid grid-cols-3 gap-4 justify-center">
+                    <img src="https://i.postimg.cc/d0wxjBj1/yay1.jpg" alt="Photo 1" class="memory-image rounded-lg">
+                    <img src="https://i.postimg.cc/ydSpVbVL/GDF.jpg" alt="photo2 3" class="memory-image rounded-lg">
+                    <img src="https://i.postimg.cc/SQnk9SKP/yay2.jpg" alt="photo3" class="memory-image rounded-lg">
+                    
+                </div>
+            </div>
+
+            <!-- MY TEXT Tab -->
+            <div id="mytext" class="tab-content hidden">
+                <div class="mytext p-8 max-w-2xl mx-auto">
+                    <h2 class="text-3xl text-pink-700 mb-6"> <b>So i wanna say that </b></h2>
+                    <p class="text-xl text-gray-800 leading-relaxed" style="color: #ce6b6e;"> <i>
+                        Awww, i thought you ask somebody to be your valentine on 13th Feb so i had 
+                        to rush this, though i was already working on it but it wasnt even complete so yeah
+                        BUT I LOVE YOU SO MUCH hehehe doesnt hurt to do something heartfelt for the <span style="background-color:palevioletred; color: white;"> LOVE</span> of my
+                        life once in a while. Plus you are working so hard so i just want to make you feel
+                        so so so loved all the time :) i love you so much <3 <br>
+                       <small><p style="background-color:palevioletred; color: whitesmoke;"> PS : https://open.spotify.com/playlist/0V1zU5xDqOp3fVK2w0V3ek?si=4d10a012c744432f&pt=cbab572ce1c38d7472528b58801c106b </small> </p>
+                        </i> </p>
+                </div>
+            </div>
+
+            <!-- Interactive Tab -->
+            <div id="interactive" class="tab-content hidden">
+                <div class="bg-white/50 backdrop-blur-md p-8 rounded-lg">
+                    <h2 class="text-3xl text-pink-700 mb-6">You love me? 💘</h2>
+                    <img src="https://i.postimg.cc/xj5p9MYD/yo.jpg" height="200hv" width="200hv" style="display: block; margin: auto;">
+                    <div class="flex justify-center space-x-4">
+                        <button id="yesBtn" onclick="handleResponse(true)" class="px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition">
+                            I Mean....okay
+                        </button>
+                        <button id="noBtn" onclick="handleResponse(false)" class="px-6 py-3 bg-red-500 text-white rounded-lg hover:bg-red-600 transition">
+                            No Ew
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Tab Management
+            function changeTab(tabId) {
+                document.querySelectorAll('.tab-content').forEach(tab => {
+                    tab.classList.add('hidden');
+                });
+                document.getElementById(tabId).classList.remove('hidden');
+            }
+
+            // Initial tab
+            changeTab('interactive');
+
+            // Interactive Response Handling
+            let noClickCount = 0;
+            function handleResponse(isYes) {
+                if (isYes) {
+                    confetti({
+                        particleCount: 200,
+                        spread: 70,
+                        origin: { y: 0.6 },
+                        colors: ['#ff6b6b', '#ff9ff3', '#feca57']
+                    });
+                    document.getElementById('interactive').innerHTML = `
+                        <div class="text-4xl text-pink-700">
+                            CONGRATULATIONS ON OUR MARRIAGE
+                        </div>
+                    `;
+                } else {
+                    noClickCount++;
+                    const noBtn = document.getElementById('noBtn');
+                    const yesBtn = document.getElementById('yesBtn');
+
+                    //  dynamic responses
+                    const responses = [
+                        "                          ........", 
+                        "                    ....... Are you sure? ", 
+                        "                         ........Think again", 
+                        "                  ............This is a suicide wish", 
+                        "                           ....................i'll flash you"
+                    ];
+
+                    if (noClickCount < responses.length) {
+                        noBtn.textContent = responses[noClickCount];
+                        
+                        // Make yes button more enticing
+                        yesBtn.style.transform = `scale(${1 + noClickCount * 0.2})`;
+                        yesBtn.style.backgroundColor = `hsl(${120 + noClickCount * 20}, 70%, 50%)`;
+                    }
+
+                    if (noClickCount >= responses.length) {
+                        noBtn.disabled = true;
+                        noBtn.textContent = "..................................nigga shut the fuck up";
+                    }
+                }
+            }
+        </script>
+         <footer style="background-color: pink; text-align: center; padding: 10px; position: fixed; bottom: 0; width: 100%;">
+            <p style="color: white;">© All Rights Reserved To One And Only Nandini (Kushagra's Girlfriend)</p>
+        </footer>
+    </body>
+    </html>
