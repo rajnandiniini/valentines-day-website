@@ -4,6 +4,6 @@ made with so much love please treat it nicely. Also this is my first website eve
 
 ## Direct link
 
-Try it here: **[Website]([https://new-year-six-pi.vercel.app/ex31.html])**
+Try it here: **[Website](https://new-year-six-pi.vercel.app/ex31.html)**
 
 
